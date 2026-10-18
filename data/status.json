@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "mode": "research_only",
+  "updated_at": null,
+  "source": "none",
+  "markets": {
+    "stocks": {
+      "status": "not_connected"
+    },
+    "crypto": {
+      "status": "not_connected"
+    },
+    "memecoins": {
+      "status": "not_connected"
+    }
+  },
+  "portfolios": {
+    "stocks": {
+      "starting_cash_gbp": 5000,
+      "status": "not_started"
+    },
+    "crypto": {
+      "starting_cash_gbp": 5000,
+      "status": "not_started"
+    },
+    "memecoins": {
+      "starting_cash_gbp": 5000,
+      "status": "not_started"
+    }
+  }
+}
