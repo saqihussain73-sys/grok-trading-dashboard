@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b1425"><title>Grok Trading Lab — Dashboard</title>
+<style>
+:root{color-scheme:dark;font-family:system-ui,-apple-system,Segoe UI,sans-serif}*{box-sizing:border-box}
+body{background:#0b1425;color:#eef5ff;margin:0;padding:24px}main{max-width:980px;margin:auto}
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+h1{font-size:clamp(1.5rem,5vw,2.4rem);margin:12px 0}p{color:#afc0d5;line-height:1.5}
+.pill{border:1px solid #57718e;border-radius:30px;padding:7px 12px;font-size:.78rem}
+.warning{background:#30251c;border:1px solid #8d6c37;color:#ffe0a3;padding:15px;border-radius:12px;margin:20px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
+.card{background:#16243a;border:1px solid #283d58;border-radius:16px;padding:20px}
+.card small{color:#a9bad0}.value{font-size:1.8rem;font-weight:750;margin:10px 0 2px}
+.meta{font-size:.85rem;color:#8da6c2}h2{font-size:1.2rem;margin-top:30px}
+svg{width:100%;height:auto;background:#16243a;border:1px solid #283d58;border-radius:16px}
+a{color:#8dd4ff}footer{margin-top:32px;font-size:.83rem;color:#8da6c2}
+</style></head>
+<body><main><header><div><p class="meta">GROK TRADING LAB</p><h1>Research Dashboard</h1></div><span class="pill">Prototype · Public view</span></header>
+<div class="warning"><strong>Demonstration only.</strong> All values below are fictional examples, not actual portfolio balances, live market prices, trades, or performance. No trading is enabled.</div>
+<section class="grid" aria-label="Demonstration portfolios">
+<div class="card"><small>Stocks · virtual allocation</small><div class="value">£5,000</div><div class="meta">Not yet forward-tested</div></div>
+<div class="card"><small>Crypto · virtual allocation</small><div class="value">£5,000</div><div class="meta">Not yet forward-tested</div></div>
+<div class="card"><small>Meme coins · virtual allocation</small><div class="value">£5,000</div><div class="meta">Not yet forward-tested</div></div>
+<div class="card"><small>Total illustrative starting capital</small><div class="value">£15,000</div><div class="meta">No real money connected</div></div>
+</section><h2>Example equity curve</h2><p>This line is fabricated solely to demonstrate the future chart design.</p>
+<svg viewBox="0 0 700 240" role="img" aria-label="Fictional illustrative equity curve">
+<path d="M35 200H670M35 120H670M35 40H670" stroke="#31435a" fill="none"/>
+<polyline points="35,150 140,145 245,170 350,130 455,140 560,85 665,105" fill="none" stroke="#5de2b3" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg><h2>Development status</h2>
+<section class="grid"><div class="card"><strong>Stock backtesting</strong><p>Code prepared; successful automated execution unverified.</p></div>
+<div class="card"><strong>Crypto research</strong><p>Historical data connector prepared; live reliability unverified.</p></div>
+<div class="card"><strong>Meme-coin screening</strong><p>Experimental risk filters written; no live token feed connected.</p></div>
+</section><footer>Public static demonstration · No API keys, wallet addresses or private portfolio data published. <a href="https://github.com/saqihussain73-sys/grok-trading-dashboard">Dashboard source</a></footer>
+</main></body></html>
