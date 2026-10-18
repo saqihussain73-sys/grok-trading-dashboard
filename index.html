@@ -26,9 +26,34 @@ a{color:#8dd4ff}footer{margin-top:32px;font-size:.83rem;color:#8da6c2}
 <svg viewBox="0 0 700 240" role="img" aria-label="Fictional illustrative equity curve">
 <path d="M35 200H670M35 120H670M35 40H670" stroke="#31435a" fill="none"/>
 <polyline points="35,150 140,145 245,170 350,130 455,140 560,85 665,105" fill="none" stroke="#5de2b3" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-</svg><h2>Development status</h2>
+</svg><h2>Public market data</h2><p id="feed-updated">Feed status: awaiting first scheduled update</p>
+<section class="grid" aria-label="Public market quotes">
+<div class="card"><small>Apple (AAPL) · USD</small><div class="value" id="stock-price">—</div><div class="meta" id="stock-info">Not yet connected</div></div>
+<div class="card"><small>Bitcoin (BTC) · USD</small><div class="value" id="crypto-price">—</div><div class="meta" id="crypto-info">Not yet connected</div></div>
+<div class="card"><small>Meme-coin data</small><div class="value">—</div><div class="meta">Not connected · no verified on-chain feed</div></div>
+</section><p class="meta">Quotes are indicative research data, not live executable prices. Virtual GBP allocations are not converted using these USD quotes.</p>
+<h2>Development status</h2>
 <section class="grid"><div class="card"><strong>Stock backtesting</strong><p>Code prepared; successful automated execution unverified.</p></div>
 <div class="card"><strong>Crypto research</strong><p>Historical data connector prepared; live reliability unverified.</p></div>
 <div class="card"><strong>Meme-coin screening</strong><p>Experimental risk filters written; no live token feed connected.</p></div>
 </section><footer>Public static demonstration · No API keys, wallet addresses or private portfolio data published. <a href="https://github.com/saqihussain73-sys/grok-trading-dashboard">Dashboard source</a></footer>
-</main></body></html>
+<script>
+(async function(){
+  try {
+    const response = await fetch('./data/status.json', {cache:'no-store'});
+    if (!response.ok) throw new Error('Feed unavailable');
+    const data = await response.json();
+    const stamp = document.getElementById('feed-updated');
+    stamp.textContent = data.updated_at ? 'Last feed check: '+new Date(data.updated_at).toLocaleString() : 'Awaiting first market-data update';
+    for(const [market,prefix] of [['stocks','stock'],['crypto','crypto']]){
+      const quote=data.markets?.[market] || {};
+      const price=document.getElementById(prefix+'-price');
+      const info=document.getElementById(prefix+'-info');
+      if(quote.status==='available' && Number.isFinite(quote.price) && quote.price>0 && quote.currency==='USD'){
+        price.textContent = new Intl.NumberFormat('en-GB',{style:'currency',currency:'USD'}).format(quote.price);
+        info.textContent = quote.source+' · '+quote.as_of+' · Indicative';
+      } else { price.textContent='—'; info.textContent='Unavailable or not yet updated'; }
+    }
+  } catch (_) { document.getElementById('feed-updated').textContent='Market data temporarily unavailable'; }
+})();
+</script></main></body></html>
