@@ -1,14 +1,22 @@
 {
   "schema_version": 1,
   "mode": "research_only",
-  "updated_at": null,
-  "source": "none",
+  "updated_at": "2026-10-18T13:12:24.112212+00:00",
+  "source": "public_stooq_and_coingecko",
   "markets": {
     "stocks": {
-      "status": "not_connected"
+      "status": "unavailable",
+      "reason": "KeyError",
+      "disclaimer": "Feed unavailable; no quote shown"
     },
     "crypto": {
-      "status": "not_connected"
+      "symbol": "BTC",
+      "price": 81853.0,
+      "currency": "USD",
+      "as_of": "2026-10-18T13:11:41+00:00",
+      "source": "CoinGecko public API",
+      "status": "available",
+      "disclaimer": "Indicative quote; not executable and may be delayed"
     },
     "memecoins": {
       "status": "not_connected"
