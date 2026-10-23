@@ -1,19 +1,19 @@
 {
   "schema_version": 1,
   "mode": "research_only",
-  "updated_at": "2026-10-22T23:58:16.766286+00:00",
+  "updated_at": "2026-10-23T23:50:53.758594+00:00",
   "source": "public_stooq_and_coingecko",
   "markets": {
     "stocks": {
       "status": "unavailable",
-      "reason": "URLError",
+      "reason": "KeyError",
       "disclaimer": "Feed unavailable; no quote shown"
     },
     "crypto": {
       "symbol": "BTC",
-      "price": 81328.0,
+      "price": 81057.0,
       "currency": "USD",
-      "as_of": "2026-10-22T23:58:13+00:00",
+      "as_of": "2026-10-23T23:50:31+00:00",
       "source": "CoinGecko public API",
       "status": "available",
       "disclaimer": "Indicative quote; not executable and may be delayed"
